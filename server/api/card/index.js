@@ -1,7 +1,8 @@
+/* jshint node: true */
 'use strict';
 
-var express = require('express');
-var controller = require('./card.controller');
+var express     = require('express');
+var controller  = require('./card.controller');
 
 var router = express.Router();
 
