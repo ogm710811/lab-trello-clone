@@ -1,3 +1,4 @@
+/* jshint node: true */
 'use strict';
 
 const mongoose = require('mongoose');
@@ -11,6 +12,8 @@ const cardSchema = new mongoose.Schema({
   description: String,
   dueDate: Date,
   position: Number,
+  
+  // list will be a reference to the List ObjectId where we have the card.
   list: {
     type: Schema.Types.ObjectId,
     ref: 'List',

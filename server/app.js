@@ -6,7 +6,9 @@ const cookieParser  = require('cookie-parser');
 const bodyParser    = require('body-parser');
 const cors          = require('cors');
 const mongoose      = require('mongoose');
-// Lesson 2: Require dotenv configuration
+
+// Require dotenv configuration
+require('dotenv').config();
 
 const app = express();
 
@@ -20,8 +22,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Mongoose configuration
-mongoose.connect('mongodb://localhost/irontrello');
-// Lesson 2: Use environment variable for the MONGODB_URI
+// mongoose.connect('mongodb://localhost/irontrello');
+// Use environment variable for the MONGODB_URI
+mongoose.connect(process.env.MONGODB_URI);
+
 
 app.set('view engine', 'jade');
 
